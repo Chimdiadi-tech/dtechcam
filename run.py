@@ -31,6 +31,9 @@ from modules import platform_info
 platform_info.print_banner()
 
 from modules import core
+from modules.license_check import check_license
 
 if __name__ == '__main__':
+    if not check_license():
+        sys.exit(1)
     core.run()
